@@ -14,7 +14,7 @@
 
 ## 사용 방법
 
-1. `index.html` 파일을 브라우저에서 엽니다. [Img2video 실행](<https://jtech-co.github.io/Img2video/index.html>)
+1. `index.html` 파일을 브라우저에서 엽니다. [Img2video 실행](<https://jtech-co.github.io/img2video/index.html>)
 2. 이미지 파일을 선택합니다.
 3. 출력 형식(MP4 또는 GIF)을 선택합니다.
 4. 지속 시간(초)을 설정합니다.
@@ -47,4 +47,5 @@ img2video/
 
 - **완전한 클라이언트 사이드 처리**: 프라이버시 보호, 서버 부하 없음
 - **반응형 디자인**: 모바일 및 데스크톱 지원
+
 
