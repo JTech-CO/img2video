@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img2video</title>
+    <!-- GIF.js -->
+    <script src="https://unpkg.com/gif.js@0.2.0/dist/gif.js"></script>
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="spx-container">
+    <header class="spx-page-header">
+        <div>
+            <h1 class="spx-title-large" data-i18n="title">IMG TO VIDEO</h1>
+            <p class="spx-subtitle-mono" data-i18n="subtitle">Client-side Processing Unit</p>
+        </div>
+        <button id="langToggle" class="spx-btn spx-btn-secondary">KO</button>
+    </header>
+
+    <div class="spx-section">
+        <div class="spx-category-header">
+            <span class="spx-category-title" data-i18n="config">CONFIGURATION</span>
+            <div class="spx-line-separator"></div>
+        </div>
+
+        <div class="spx-card">
+            <div class="spx-card-header">
+                <span class="spx-ticker" data-i18n="source_params">SOURCE & PARAMS</span>
+                <span class="spx-meta" data-i18n="input">INPUT</span>
+            </div>
+            
+            <div class="spx-grid" style="grid-template-columns: 1fr;">
+                <div>
+                    <label class="spx-subtitle-mono" style="display:block; margin-bottom:8px;" data-i18n="select_img">IMAGE SOURCE</label>
+                    <input type="file" id="imageInput" accept="image/*" class="spx-input">
+                </div>
+            </div>
+
+            <div class="spx-grid mt-20" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div>
+                    <label class="spx-subtitle-mono" style="display:block; margin-bottom:8px;" data-i18n="format">OUTPUT FORMAT</label>
+                    <select id="formatSelect" class="spx-input">
+                        <option value="mp4">MP4 (Video)</option>
+                        <option value="gif">GIF (Image)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="spx-subtitle-mono" style="display:block; margin-bottom:8px;" data-i18n="duration">DURATION (SEC)</label>
+                    <input type="number" id="durationInput" class="spx-input" value="1" min="1" max="10">
+                </div>
+            </div>
+
+            <div class="mt-20 text-right">
+                <button id="convertBtn" class="spx-btn" data-i18n="convert">INITIATE CONVERSION</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="spx-section">
+        <div class="spx-category-header">
+            <span class="spx-category-title" data-i18n="output">OUTPUT</span>
+            <div class="spx-line-separator"></div>
+        </div>
+        
+        <div class="spx-card">
+            <div class="spx-card-header">
+                <span class="spx-ticker" data-i18n="rendered_result">RENDERED RESULT</span>
+                <span class="spx-meta" data-i18n="preview">PREVIEW</span>
+            </div>
+            <div style="min-height: 100px; display: flex; justify-content: center; align-items: center; background: var(--spx-bg-input); padding: 20px;">
+                <p id="placeholder" class="spx-subtitle-mono" data-i18n="status_wait">WAITING FOR INPUT...</p>
+                <video id="outputVideo" controls></video>
+                <img id="outputImg" alt="Generated GIF">
+            </div>
+            <div id="downloadContainer" class="mt-20 text-right hidden">
+                <a id="downloadLink" class="spx-btn" download data-i18n="download">DOWNLOAD FILE</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="spx-footer">
+        <p class="spx-subtitle-mono" data-i18n="footer_msg">NO DATA IS SENT TO SERVER</p>
+    </footer>
+</div>
+
+<!-- 스크립트 -->
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/modules/converter.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
